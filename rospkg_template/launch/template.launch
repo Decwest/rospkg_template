@@ -1,5 +1,5 @@
 <launch>
-    <arg name="control_frequency" default="50" />
+    <arg name="control_frequency" default="10" />
     <arg name="base_frame_id" default="base_link" />
 
     <node pkg="tf" type="static_transform_publisher" name="map_base_broadcaster" args="0.5 0.5 0 0 0 0 map base_link 10" /> <!-- ms -->

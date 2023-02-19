@@ -19,7 +19,6 @@ Template::Template(ros::NodeHandle &nh, const int &loop_rate, const std::string 
     ROS_INFO("template_cpp_node ready");
     update();
 
-    // ros::spin();
 }
 
 bool Template::templateService(rospkg_template_msgs::SrvTemplate::Request &req, rospkg_template_msgs::SrvTemplate::Response &res)
@@ -44,7 +43,8 @@ void Template::update()
         catch (tf2::TransformException& ex)
         {
             ROS_WARN("%s", ex.what());
-            return;
+            continue;
+            // return
         }
         auto& trans = transformStamped.transform.translation; // Vector3
         auto& rotation = transformStamped.transform.rotation; // Quaternion
