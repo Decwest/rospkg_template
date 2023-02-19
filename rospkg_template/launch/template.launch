@@ -1,6 +1,12 @@
 <launch>
+    <arg name="control_frequency" default="50" />
+    <arg name="base_frame_id" default="base_link" />
 
+    <node pkg="tf" type="static_transform_publisher" name="map_base_broadcaster" args="0.5 0.5 0 0 0 0 map base_link 10" /> <!-- ms -->
 
-
+    <node pkg="rospkg_template" name="rospkg_template" type="template" output="screen">
+        <param name= "control_frequency" value="$(arg control_frequency)" />
+        <param name = "base_frame_id" value = "$(arg base_frame_id)" />
+    </node>
 
 </launch>

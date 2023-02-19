@@ -12,6 +12,9 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   rospkg_template_msgs
+  tf
+  tf2
+  tf2_ros
 )
 
 catkin_package(

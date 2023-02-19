@@ -2,10 +2,8 @@
 #define TEMPLATE_H
 
 #include <ros/ros.h>
-#include <std_msgs/Float32MultiArray.h>
-#include <std_msgs/Float64.h>
-#include <tf/transform_broadcaster.h>
-#include <tf/transform_listener.h>
+// #include <tf/transform_broadcaster.h>
+#include <tf2_ros/transform_listener.h>
 #include "rospkg_template_msgs/SrvTemplate.h"
 
 #include <cmath>
@@ -29,7 +27,8 @@ private:
     // TODO: action communication
 
     // tf::TransformBroadcaster broadcaster;
-    // tf::TransformListener listerner;
+    tf2_ros::Buffer tfBuffer_;
+    tf2_ros::TransformListener tfListener_;
 
     //Configurations
     int loop_rate_;
